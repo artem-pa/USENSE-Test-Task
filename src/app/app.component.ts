@@ -2,8 +2,7 @@ import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-root',
-  templateUrl: './app.component.html'
+  template: '<app-exchanger></app-exchanger>'
 })
 export class AppComponent {
-  title = 'USENSE_Test_task';
 }

@@ -1,1 +1,19 @@
-<p>header works!</p>
+<header class="header">
+  <div class="container">
+    <div class="header__row">
+      <div class="header__logo">
+        <a href="/">
+          <img src="../../../assets/logo.png" alt="Logo" title="Конвертер валют">
+        </a>
+      </div>
+      <h1 class="header__title">конвертер валют</h1>
+      <div class="header__actual-rate">
+        <p class="rate">
+          {{rate ? (rate.usd | currency:'USD':'symbol':'1.2-5') : '--.---'}} /
+          {{rate ? (rate.eur | currency:'EUR':'symbol':'1.2-5') : '--.---'}}
+        </p>
+        <p class="date">Курс НБУ на {{rate ? rate.date : (currentDate | date:'dd.MM.yyyy')}}</p>
+      </div>
+    </div>
+  </div>
+</header>
