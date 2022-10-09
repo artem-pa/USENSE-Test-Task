@@ -4,16 +4,14 @@ import { IExchabgeRateUsdEur } from 'src/app/interfaces/exchange-rate.interface'
 @Component({
   selector: 'app-header',
   templateUrl: './header.component.html',
-  styleUrls: ['./header.component.scss']
+  styleUrls: ['./header.component.scss'],
 })
 export class HeaderComponent implements OnInit {
   @Input() rate: IExchabgeRateUsdEur | null = null;
 
-  constructor() { }
+  constructor() {}
 
   currentDate = new Date();
 
-  ngOnInit(): void {
-  }
-  
+  ngOnInit(): void {}
 }

@@ -2,34 +2,42 @@
 
 <main>
   <div class="container">
-    <ng-container *ngIf="rateArray.length === 0; else content">
-      <h1>LOADER</h1>
-    </ng-container>
-    <ng-template #content>
+    <ng-container *ngIf="rateArray.length > 0; else content">
       <div class="forms">
         <form class="form left-side">
-          <app-select 
-            name="select" 
-            [value]="leftSide.currency" 
+          <app-select
+            name="select"
+            [value]="leftSide.currency"
             [options]="options"
             [disabledValue]="rightSide.currency"
             (onChange)="updateCurrency('left', $event)"
           ></app-select>
-          <input type="text" name="input" [(ngModel)]="leftSide.value">
+          <app-input
+            [value]="leftSide.value"
+            (onChange)="updateValue('left', $event)"
+          ></app-input>
         </form>
+
         <form class="form rigth-side">
-          <app-select 
-            name="select" 
-            [value]="rightSide.currency" 
+          <app-select
+            name="select"
+            [value]="rightSide.currency"
             [options]="options"
             [disabledValue]="leftSide.currency"
             (onChange)="updateCurrency('right', $event)"
           ></app-select>
-          <input type="text" name="input" [ngModel]="rightSide.value">
+          <app-input
+            [value]="rightSide.value"
+            (onChange)="updateValue('right', $event)"
+          ></app-input>
         </form>
       </div>
-    </ng-template>
+    </ng-container>
   </div>
 </main>
 
 <app-footer></app-footer>
+
+<ng-template #content>
+  <app-loader></app-loader>
+</ng-template>
