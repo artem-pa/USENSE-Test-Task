@@ -136,9 +136,12 @@ export class ExchangerComponent implements OnInit {
     else {
       output.value = (Number(input.value) * rate).toFixed(2);
     }
+  }
 
-    console.log('input: ', [input, inputRate]);
-    console.log('output', [output, outputRate]);
-    console.log(this.leftSide.value, this.rightSide.value);
+  replace() {
+    const temp = {...this.leftSide};
+    this.leftSide.currency = this.rightSide.currency;
+    this.rightSide.currency = temp.currency;
+    this.calcExchange();
   }
 }

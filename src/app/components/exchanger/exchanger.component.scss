@@ -9,6 +9,7 @@
   display: flex;
   gap: 50px;
   justify-content: center;
+  align-items: center;
   margin-top: 30px;
 }
 
@@ -17,4 +18,22 @@
   display: flex;
   flex-direction: column;
   row-gap: 20px;
+}
+
+.replace {
+  width: 50px;
+  height: 50px;
+  background-color: #23dd23;
+  border: none;
+  border-radius: 5px;
+  font-size: 30px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.2s;
+  &:hover {
+    box-shadow: 0 0 5px 2px rgb(35 221 35 / 78%);
+  }
+  &:active {
+    scale: 0.8;
+  }
 }

@@ -30,10 +30,8 @@ export class InputComponent {
     if (
       // Allow navigation keys
       this.navigationKeys.indexOf(e.key) > -1 ||
-
       //Allow decimal separator
       (e.key === '.' && !this.currentValue.includes('.')) ||
-
       // Allow key combinations
       (e.key === 'a' && e.ctrlKey === true) || // Ctrl+A (Windows)
       (e.key === 'c' && e.ctrlKey === true) || // Ctrl+C (Windows)
