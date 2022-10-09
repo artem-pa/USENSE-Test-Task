@@ -58,6 +58,7 @@
     &.disabled {
       color: #c5d5c2;
       cursor: default;
+      pointer-events: none;
     }
     &:last-child {
       margin-bottom: 0;
